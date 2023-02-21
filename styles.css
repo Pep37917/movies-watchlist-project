@@ -139,6 +139,7 @@ header,
 .sb-container input {
     margin-left: 0.2em;
     border: none;
+    padding: 0.2em;
 }
 
 

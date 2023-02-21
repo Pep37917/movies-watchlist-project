@@ -21,7 +21,7 @@ document.addEventListener("submit", async (e) => {
     e.preventDefault()
     // requesting data from the OMDB api
 
-    const res = await fetch(`http://www.omdbapi.com/?apikey=b6f96693&s=${movieInput.value}`)
+    const res = await fetch(`https://www.omdbapi.com/?apikey=b6f96693&s=${movieInput.value}`)
     const data = await res.json()
 
     if (data.Response === "False") {
@@ -75,7 +75,7 @@ function renderMoviesHtml(movieData) {
     moviesList.innerHTML = ""
 
     movieData.Search.forEach(async obj => {
-        const res = await fetch(`http://www.omdbapi.com/?apikey=b6f96693&t=${obj.Title}`)
+        const res = await fetch(`https://www.omdbapi.com/?apikey=b6f96693&t=${obj.Title}`)
         const data = await res.json()
 
         // !! data.Ratings[0].Value can cause errors in the console since some movies have no ratings or non-existen
@@ -115,7 +115,7 @@ function renderMoviesHtml(movieData) {
 
 /* adds movie to an array then into the local storage */
 async function addMovie(id) {
-    const res = await fetch(`http://www.omdbapi.com/?apikey=b6f96693&i=${id}`)
+    const res = await fetch(`https://www.omdbapi.com/?apikey=b6f96693&i=${id}`)
     const data = await res.json()
 
     if (moviesFromLocalStorage) {

@@ -9,8 +9,6 @@ const watchListContainer = document.getElementById("wl-movies-section")
 document.addEventListener("click", (e) => {
     if (e.target.dataset.remove) {
         removeMovie(e.target.dataset.remove)
-    } else if (e.target.dataset.redirect) {
-        window.location.href = "index.html"
     }
 })
 

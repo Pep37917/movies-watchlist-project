@@ -37,7 +37,7 @@ function removeMovie(id) {
         watchListContainer.innerHTML += `
         <div class="explore">
             <h3>Your watchlist is looking a little empty....</h3>
-            <button class="add-btn"><i class="fa-solid fa-circle-plus"></i> Let's add some movies!</button>
+            <a class="add-btn"><i class="fa-solid fa-circle-plus"></i> Let's add some movies!</a>
         </div>
         `
     }

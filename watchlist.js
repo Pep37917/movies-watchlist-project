@@ -34,12 +34,7 @@ function removeMovie(id) {
     renderWatchlistHtml(moviesFromLocalStorage)
 
     if (moviesFromLocalStorage.length === 0) {
-        watchListContainer.innerHTML += `
-        <div class="explore">
-            <h3>Your watchlist is looking a little empty....</h3>
-            <a class="add-btn"><i class="fa-solid fa-circle-plus"></i> Let's add some movies!</a>
-        </div>
-        `
+        location.reload()
     }
 
 }

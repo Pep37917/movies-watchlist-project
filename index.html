@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- title -->
+    <title>Movies Watchlist Project</title>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="header-content">
+            <h1>Find your film</h1>
+            <a class="header-link" id="watchlist-link" href="watchlist.html">My Watchlist <i class="fa-solid fa-list wl-icon" id="watchlist-icon"></i></a>
+        </div>
+        <!-- search bar -->
+        <form class="sb-container" id="movie-form">
+            <div class="input-section">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="movie-input" placeholder="Search for a movie">
+            </div>
+            <button class="search-button" id="search-movie" type="submit">search</button>
+        </form>
+    </header>
+
+    <!-- watchlist message -->
+    <div class="message-container">
+        <div class="watchlist-message hidden" id="watchlist-m">Added to your watchlist!</div>
+    </div>
+
+
+    <!-- movie list -->
+    <section class="movie-list" id="movies-section">
+
+        <div class="explore" id="explore-section">
+            <i class="fa-solid fa-film"></i>
+            <h3>Start Exploring</h3>
+        </div>
+
+        
+            
+        <!-- <div class="movie">
+            <div class="movie-img">
+                <img src="images/pac-rim.jfif" alt="">
+            </div>
+            <div class="movie-info">
+                <div class="details details-1 flex">
+                    <h2 class="title">Pacific Rim</h3>
+                    <div class="r-score">
+                        <i class="fa-solid fa-star"></i>
+                        <p class="rating">6.9</p>
+                    </div>
+                </div>
+                <div class="details details-2 flex">
+                    <p class="duration">117 min</p>
+                    <p class="genre"> sci fi,money, kingz</p>
+                    <button class="watchlist-btn">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <p>watchlist</p>
+                    </button>
+                </div>
+                <div class="details details-3">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, atque!
+                </div>
+            </div>
+        </div> -->
+    </section>
+    <script src="app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,492 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === GLOBAL STYLES === */
+
+body {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+a {
+    cursor: pointer;
+}
+
+input:focus,
+text-area:focus {
+    outline: none;
+}
+
+
+/* =============
+    for iphones
+   =============
+*/
+
+/* ==== header content ==== */
+
+header {
+    position: relative;
+    height: 11.5em;
+    width: 100%;
+}
+
+header,
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    background: linear-gradient(rgba(40, 41, 40, 0.826), rgba(34, 34, 34, 0.793)), url(images/header-bg.png) center/cover no-repeat;
+    background-position: 0 19%;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+    color: #FFFFFF;
+    background-size: auto;
+}
+
+/* title */
+.header-content h1 {
+    font-size: 1.85rem;
+}
+
+.header-link {
+    font-size: 0.7125rem;
+    margin-top: 0.25em;
+    color: #FFFFFF;
+    position: relative;
+}
+
+/* homepage watchlist icon */
+.header-content .wl-icon,
+.header-content .home-icon {
+    position: absolute;
+    top:0;
+    right: -26%;
+    font-size: 1.25em;
+    transform: scale(0);
+    transition: all 0.4s ease-in-out;
+}
+
+/* emerging icons */
+.header-link:hover .wl-icon,
+.header-link:hover .home-icon {
+    transform: scale(1.1)
+}
+
+
+/* == search bar == */
+
+.sb-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #D1D5DB;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    height: 45px;
+    z-index: 1;
+}
+
+.input-section {
+    text-align: start;
+    padding: 0 0.7125em;
+    width: 70%;
+}
+
+.sb-container input {
+    margin-left: 0.2em;
+    border: none;
+}
+
+
+.sb-container .search-button {
+    position: relative;
+    border: none;
+    width: 20%;
+    height: 100%;
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.sb-container .search-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #636262;
+    border-radius: 5px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+}
+
+.sb-container .search-button:hover::before,
+.sb-container .search-button:focus::before {
+    transform: scaleX(1);
+}
+
+.sb-container .search-button:hover {
+    color: #ffffff;
+}
+
+
+
+/* ==== movie list ==== */
+
+/* flex property on containers*/
+.details-1,
+.details-1 div,
+.details-2,
+.details-2 .watchlist-btn,
+.movie,
+.movie-info,
+.r-score {
+    display: flex;
+}
+
+.details-1,
+.details-1 div,
+.details-2,
+.details-2 .watchlist-btn,
+.movie {
+    align-items: center;
+}
+
+.details,
+.duration,
+.genre,
+.watchlist-btn p {
+    text-align: start;
+    font-size: 0.65rem;
+}
+
+/* each detail section */
+
+.details-1 {
+    gap: 10px;
+}
+
+.details-2 {
+    justify-content: space-between;
+    font-size: 0.5rem;
+}
+
+.details-3 {
+    font-size: 0.725rem;
+    color:#777c87;
+}
+
+/* === MOVIE SECTION === */
+
+.movie-list {
+    margin-top: 4em;
+    padding: 0 1em;
+    position: relative;
+}
+
+/* ==== watchlist message ==== */
+.message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 250px;
+    z-index: 1;
+}
+
+.watchlist-message {
+    background: #7693d0;
+    width: 100%;
+    padding: 1em;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+/* === explore section ===  
+
+    == no movies ==
+*/
+
+/* centering the text and the explore section */
+.explore,
+.error-text {
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    color: #898686;
+    margin-top: 10em;
+}
+
+.error-text {
+    font-size: 1.5em;
+}
+
+.explore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.explore i {
+    font-size: 7em;
+}
+
+.explore h3 {
+    font-size: 1.5em;
+}
+
+
+/* movie containers */
+
+.movie {
+    gap: 20px;
+    border-bottom: 1.5px solid #E5E7EB;
+    padding-bottom: 1.3em;
+    margin-bottom: 1.3125em;
+}
+
+.movie-info {
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.details {
+    width: 250px;
+    text-align: start;
+}
+
+.details-1 .title {
+    font-size: 1.25em;
+}
+
+/* img */
+
+.movie .movie-img {
+    width: 100px;
+    height: 160px;
+}
+
+.movie-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+/* rating */
+
+.r-score {
+    gap: 5px;
+}
+
+.r-score i {
+    color: #eef138;
+}
+
+.rating {
+    font-size: 1em;
+}
+
+/* add button */
+.watchlist-btn {
+    gap: 4px;
+    align-items: center;
+    border: none;
+    background: none;
+    transition: all 0.4s ease-in-out
+}
+
+.watchlist-btn:focus {
+    color: #ed4848;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.flex {
+    display: flex;
+}
+
+/* ==== watchlist page === */
+
+
+
+.add-btn {
+    border: none;
+    background: none;
+    margin-top: 2em;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.4s ease-in-out;
+}
+
+.add-btn i {
+    font-size: 0.8em;
+    margin-left: 0.3em;
+}
+
+/* === hover effects for add buttons */
+.watchlist-btn:hover,
+.add-btn:hover {
+    color: #656363;
+}
+
+
+/*
+
+====== MEDIA QUERIES ======
+
+*/
+
+
+/* for computer screens */
+@media screen and (min-width: 1000px) and (max-width: 100vw) {
+
+    /* header section */
+    header {
+        height: 35vh;
+    }
+    
+    .header-content {
+        justify-content: space-between;
+        padding: 0 13em;
+    }
+    
+    .header-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .header-content .header-link {
+        font-size: 1.25rem;
+    }
+
+    /* search bar*/
+    .sb-container {
+        width: 500px;
+        height: 55px;
+    }
+
+    .sb-container .search-button,
+    .input-section input {
+        font-weight: 500;
+    }
+
+    .sb-container .search-button {
+        font-size: 1rem;
+    }
+
+    .input-section input {
+        font-size: 1rem;
+    }
+
+    /* movies section */
+    .movie-list {
+        margin-top: 6em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        padding: 0 8em;
+    }
+
+    .movie .movie-img {
+        width: 180px;
+        height: 240px;
+    }
+
+    .movie-info {
+        gap: 20px;
+    }
+
+    .details {
+        width: 340px;
+    }
+
+    .details-2 p {
+        font-size: 0.8rem;
+    }
+    
+    .details-3 {
+        font-size: 0.9rem;
+    }
+
+    .details-1 .title {
+        font-size: 1.15rem;
+    }
+
+    .rating {
+        font-size: 0.7125rem;
+    }
+
+    /* watchlist page styles */
+
+    .add-btn {
+        font-size: 1.075em;
+    }
+}
+
+
+/* for ipads */
+@media screen and (min-width: 760px) and (max-width: 900px) {
+    .movie-list {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ========
+   utility classes
+   ========
+*/
+
+/* visibility */
+
+.hidden {
+    display: none;
+}

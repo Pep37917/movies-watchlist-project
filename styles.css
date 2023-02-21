@@ -124,7 +124,6 @@ header,
     margin: 0 auto;
     border-radius: 5px;
     height: 45px;
-    z-index: 1;
 }
 
 .input-section {
@@ -133,13 +132,14 @@ header,
     gap: 5px;
     text-align: start;
     padding: 0 0.7125em;
-    width: 70%;
 }
 
 .sb-container input {
     margin-left: 0.2em;
     border: none;
     padding: 0.2em;
+    height: 100%;
+    z-index: 999;
 }
 
 
@@ -346,7 +346,8 @@ header,
     align-items: center;
     border: none;
     background: none;
-    transition: all 0.4s ease-in-out
+    transition: all 0.4s ease-in-out;
+    color: #000000;
 }
 
 .watchlist-btn:focus {
@@ -435,7 +436,7 @@ header,
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 30px;
-        padding: 0 2em;
+        padding: 0 8em;
     }
 
     .movie .movie-img {
